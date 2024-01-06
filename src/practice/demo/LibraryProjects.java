@@ -4,7 +4,7 @@ class Library {
 	String[] Book;
 	int no_of_book;
 
-	public Library() {
+	public Library(){
 		this.Book = new String[100];
 		no_of_book = 0;
 	}
@@ -24,20 +24,32 @@ class Library {
 
 		}
 	}
+	
+	//if (this.Book[i] != null && this.Book[i].equalsIgnoreCase("someValue"))
+    // Perform actions based on the comparison
+    // ...
+
+
 
 	void issueBook(String book) {
-		for (int i = 0; i < Book.length; i++) {
-			if (Book[i].equalsIgnoreCase(book)) {
-				System.out.println(book + "Book has been issued");
+		for (int i = 0; i < Book.length; i++){
+			if(Book[i] !=null && Book[i].equalsIgnoreCase(book)){
+				System.out.println(book + ": Book has been issued");
 				Book[i] = null;
-				break;
-			} else 
+				break;		
+			}
+			else if
+			(i==Book.length-1)
 			{
-				System.out.println("No book found of given name");
+				System.out.println("Not found any book with given name: " + book);
 				break;
 			}
+				
+			
 		}
-		return;
+	
+		
+		
 	}
 
 	void returnBook(String book) {
@@ -54,8 +66,8 @@ public class LibraryProjects {
 		library.addBook("Pyhton Programming");
 		library.showBook();
 		library.issueBook("Java Programming");
-		/*library.showBook();
-		library.returnBook("Java Programming");
+		library.showBook();
+		/*library.returnBook("Java Programming");
 		library.showBook();
 		library.issueBook("Java"); */
 
