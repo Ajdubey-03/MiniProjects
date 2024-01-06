@@ -31,7 +31,8 @@ class Library {
 				System.out.println(book + "Book has been issued");
 				Book[i] = null;
 				break;
-			} else {
+			} else 
+			{
 				System.out.println("No book found of given name");
 				break;
 			}
@@ -53,10 +54,10 @@ public class LibraryProjects {
 		library.addBook("Pyhton Programming");
 		library.showBook();
 		library.issueBook("Java Programming");
-		library.showBook();
+		/*library.showBook();
 		library.returnBook("Java Programming");
 		library.showBook();
-		library.issueBook("Java");
+		library.issueBook("Java"); */
 
 	}
 
