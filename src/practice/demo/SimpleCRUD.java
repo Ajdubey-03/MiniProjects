@@ -1,6 +1,6 @@
 package practice.demo;
-
 import java.util.Scanner;
+
 
 public class SimpleCRUD {
 
@@ -11,16 +11,21 @@ public class SimpleCRUD {
 
 	public SimpleCRUD() {
 		row = 10;
-		col = 2;
+		col = 3;
 		users = new String[row][col];
+		
+		
 	}
 
 	public <users> String[][] addUser(String userName, String Email) {
+		
 		
 		if(Email.endsWith(".com") || Email.endsWith(".in")) {
 			if (rowCount <= row) {
 				users[rowCount][0] = userName;
 				users[rowCount][1] = Email;
+				users[rowCount][2]=passWordGen();
+				
 				rowCount++;
 			}
 			else {
@@ -35,6 +40,10 @@ public class SimpleCRUD {
 		 
 		return users;
 	}
+	
+	
+	
+	
 
 	public void getAllUserEmail() {
 		for (int i = 0; i < row; i++) {
@@ -47,6 +56,10 @@ public class SimpleCRUD {
 					}else if(j==1) 
 					{
 						System.out.println("email :" + users[i][j]);
+						System.out.println("**********************");
+					}else if(j==2) 
+					{
+						System.out.println("auth :" + users[i][j]);
 						System.out.println("**********************");
 					}
 					
@@ -99,5 +112,25 @@ public class SimpleCRUD {
 		}
 		
 	}
+	
+	
+	public  String passWordGen() {
+		String strSet ="ABCDEFGHIJKLMNOQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%&^*+";
+		String token="";
+		while(token.length()<30)
+		{
+			token+=  strSet.charAt((int)(Math.random()*59));
+		}
+		return token;
+	}
+	
+	
+	
+//	public boolean checkName(String name) 
+//	{
+//		if()
+//	}
+//	
+	
 
 }
